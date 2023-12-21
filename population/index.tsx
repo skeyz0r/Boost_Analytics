@@ -1,6 +1,5 @@
 
-
-export async function Leads(prisma:any, project:any)
+export async function Population(prisma:any, project:any)
 {
     const projectId = project
 
@@ -9,7 +8,7 @@ export async function Leads(prisma:any, project:any)
             projectId:projectId
         },
         data:{
-            leads: {
+            population: {
                 increment: 1, 
               },
         }

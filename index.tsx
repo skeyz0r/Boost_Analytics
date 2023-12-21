@@ -1,20 +1,16 @@
+import {Leads} from "./lead"
+import {Population} from "./population"
 
-export default async function Boolytics(info:{prisma:any, project:any})
+export default async function Boolytics(info:{prisma:any, project:any, status:boolean})
 {
-    const projectId = info.project
-
-    await info.prisma.web_analytics.update({
-        where:{
-            projectId:projectId
-        },
-        data:{
-            population: {
-                increment: 1, 
-              },
-        }
-    })
-
-
+   if(info.status)
+   {
+   Population(info.prisma, info.project)
+   }
+   else
+   {
+    Leads(info.prisma, info.project)
+   }
 
     return('')
 }
