@@ -1,13 +1,13 @@
 
 
-export default async function BooAnalytics(info:{prisma:any, project:any})
+export default async function BooAnalytics(prisma:any, project:any)
 {
 
-    const projectId = info.project.projectId
-    const population = info.project.population + 1
+    const projectId = project.projectId
+    const population = project.population + 1
 
     
-await info.prisma.web_analytics.update({
+await prisma.web_analytics.update({
     where:{
         projectId:projectId
     },
