@@ -1,16 +1,5 @@
-import {Leads} from "./lead"
-import {Population} from "./population"
+// Import and export functions from the population folder
+export { Population } from './population';
 
-export default async function Boolytics(prisma:any, project:any, status:boolean)
-{
- 
-    if(status)
-    {
-   await Leads(prisma, project)
-    }
-    else
-    {
-   await Population(prisma, project)
-    }
-
-}
+// Import and export functions from the leads folder
+export { Leads } from './lead';
