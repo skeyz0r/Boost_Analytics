@@ -1,7 +1,7 @@
 import {Leads} from "./lead"
 import {Population} from "./population"
 
-export async function Boolytics(prisma:any, project:any, status:boolean)
+export default async function Boolytics(prisma:any, project:any, status:boolean)
 {
  
     if(status)
