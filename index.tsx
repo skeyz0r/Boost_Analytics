@@ -1,5 +1,5 @@
 
-export default async function Boolytics(info:{prisma:any, project:any, leads:string})
+export default async function Boolytics(info:{prisma:any, project:any, path:string})
 {
     const projectId = info.project
 
@@ -15,7 +15,7 @@ export default async function Boolytics(info:{prisma:any, project:any, leads:str
     })
 
 
-        if(window.location.pathname.includes(info.leads))
+        if(window.location.pathname.includes(info.path))
         {
             await info.prisma.web_analytics.update({
                 where:{
