@@ -1,10 +1,10 @@
 
 
-export default async function Leads(prisma:any, project:any)
+export default async function Leads(info:{prisma:any, project:any})
 {
-    const projectId = project
+    const projectId = info.project
 
-    await prisma.web_analytics.update({
+    await info.prisma.web_analytics.update({
         where:{
             projectId:projectId
         },
@@ -14,5 +14,5 @@ export default async function Leads(prisma:any, project:any)
               },
         }
     })
-
+return('')
 }
