@@ -1,0 +1,23 @@
+{
+  "name": "boost_analytics",
+  "version": "1.0.0",
+  "description": "Boost Prime LLC Analytics",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skeyz0r/Boost_Analytics.git"
+  },
+  "keywords": [
+    "boostprime",
+    "boostprime-analytics"
+  ],
+  "author": "BOOST PRIME LLC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skeyz0r/Boost_Analytics/issues"
+  },
+  "homepage": "https://github.com/skeyz0r/Boost_Analytics#readme"
+}
