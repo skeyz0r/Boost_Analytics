@@ -1,7 +1,7 @@
 {
   "name": "boost_analytics",
   "version": "1.0.0",
-  "description": "Boost Prime LLC Analytics",
+  "description": "How to use: Import the 'Boolytics' as a component and add it to the body element in the layout page. Provide the Prisma database and ProjectId",
   "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
