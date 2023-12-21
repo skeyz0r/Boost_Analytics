@@ -1,5 +1,5 @@
 
-export default async function Population(prisma:any, project:any)
+export async function Population(prisma:any, project:any)
 {
     const projectId = project
 
