@@ -1,6 +1,6 @@
 
 
-export default async function Boolytics(info:{prisma:any, project:any})
+export default async function Leads(info:{prisma:any, project:any})
 {
     const projectId = info.project
 
