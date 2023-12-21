@@ -1,4 +1,5 @@
 
+
 export default async function Boolytics(info:{prisma:any, project:any})
 {
     const projectId = info.project
@@ -8,13 +9,10 @@ export default async function Boolytics(info:{prisma:any, project:any})
             projectId:projectId
         },
         data:{
-            population: {
+            leads: {
                 increment: 1, 
               },
         }
     })
 
-
-
-    return('')
 }
