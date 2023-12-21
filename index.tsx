@@ -1,5 +1,5 @@
 // Import and export functions from the population folder
-export { Population } from './population';
+export { default as Population } from './population';
 
 // Import and export functions from the leads folder
-export { Leads } from './lead';
+export { default as Leads } from './lead';
