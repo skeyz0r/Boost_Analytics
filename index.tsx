@@ -14,8 +14,7 @@ export default async function Boolytics(info:{prisma:any, project:any, leads:str
         }
     })
 
-        if(window.location.pathname.includes(info.leads))
-        {
+        
             await info.prisma.web_analytics.update({
                 where:{
                     projectId:projectId
@@ -26,7 +25,7 @@ export default async function Boolytics(info:{prisma:any, project:any, leads:str
                       },
                 }
             })
-        }
+        
     
 
     return('')
