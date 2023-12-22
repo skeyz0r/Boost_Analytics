@@ -1,6 +1,6 @@
 
 
-export default async function Leads(prisma:any, project:any)
+export async function Leads(prisma:any, project:any)
 {
     const projectId = project
 
