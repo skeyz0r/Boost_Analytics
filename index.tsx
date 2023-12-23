@@ -1,4 +1,4 @@
-    async function lead(prisma:any, project:any)
+   export async function lead(prisma:any, project:any)
     {
         const projectId = project
     
@@ -15,7 +15,7 @@
     }
   
   
-    async function population(prisma:any, project:any)
+   export async function population(prisma:any, project:any)
     {
         const projectId = project
     
@@ -31,7 +31,3 @@
         })
     }
   
-  module.exports = {
-    lead,
-    population,
-  };
