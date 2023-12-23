@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/skeyz0r/Boost_Analytics/issues"
   },
-  "homepage": "https://github.com/skeyz0r/Boost_Analytics#readme"
+  "homepage": "https://github.com/skeyz0r/Boost_Analytics#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.5"
+  }
 }
