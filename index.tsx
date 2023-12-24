@@ -1,4 +1,5 @@
 const today =  Date.now()
+const newDate = new Date()
 
    
    export async function lead(prisma:any, project:any)
@@ -13,7 +14,6 @@ const today =  Date.now()
     })
     const week = new Date(date[0].date);
 
-    const newDate = new Date()
 
     if(Number(date[0].date.setDate(week.getDate() + 7)) <= today)
         {
@@ -58,7 +58,8 @@ const today =  Date.now()
     })
     const week = new Date(date[0].date);
 
-    const newDate = new Date()
+    console.log(today, newDate, week)
+
     
         if(Number(date[0].date.setDate(week.getDate() + 7)) <= today)
         {
