@@ -10,35 +10,80 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.population = exports.lead = void 0;
+const today = Date.now();
 function lead(prisma, project) {
     return __awaiter(this, void 0, void 0, function* () {
         const projectId = project;
-        yield prisma.web_analytics.update({
-            where: {
-                projectId: projectId
-            },
-            data: {
-                leads: {
-                    increment: 1,
-                },
+        const date = yield prisma.web_analytics.findMany({
+            where: { projectId: projectId },
+            select: {
+                date: true
             }
         });
+        const week = new Date(date[0].date);
+        const newDate = new Date();
+        if (Number(date[0].date.setDate(week.getDate() + 7)) <= today) {
+            yield prisma.web_analytics.update({
+                where: {
+                    projectId: projectId
+                },
+                data: {
+                    leads: 1,
+                    date: newDate,
+                    leadsAll: { increment: 1 }
+                }
+            });
+        }
+        else {
+            yield prisma.web_analytics.update({
+                where: {
+                    projectId: projectId
+                },
+                data: {
+                    leads: {
+                        increment: 1,
+                    },
+                    leadsAll: { increment: 1 }
+                }
+            });
+        }
     });
 }
 exports.lead = lead;
 function population(prisma, project) {
     return __awaiter(this, void 0, void 0, function* () {
         const projectId = project;
-        yield prisma.web_analytics.update({
-            where: {
-                projectId: projectId
-            },
-            data: {
-                population: {
-                    increment: 1,
-                },
+        const date = yield prisma.web_analytics.findMany({
+            where: { projectId: projectId },
+            select: {
+                date: true
             }
         });
+        const week = new Date(date[0].date);
+        const newDate = new Date();
+        if (Number(date[0].date.setDate(week.getDate() + 7)) <= today) {
+            yield prisma.web_analytics.update({
+                where: {
+                    projectId: projectId
+                },
+                data: {
+                    population: 1,
+                    populationAll: { increment: 1 },
+                    date: newDate
+                }
+            });
+        }
+        else {
+            yield prisma.web_analytics.update({
+                where: {
+                    projectId: projectId
+                },
+                data: {
+                    population: { increment: 1 },
+                    populationAll: { increment: 1 }
+                }
+            });
+        }
     });
 }
 exports.population = population;
