@@ -38,8 +38,7 @@ function population(prisma, project) {
             }
         });
         const week = new Date(date[0].date);
-        console.log(today, newDate, week);
-        if (Number(date[0].date.setDate(week.getDate() + 7)) <= today) {
+        if (Number(date[0].date.setDate(week.getDate() - 1)) <= today) {
             yield prisma.web_analytics.update({
                 where: {
                     projectId: projectId
