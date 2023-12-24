@@ -30,9 +30,8 @@ export async function lead(prisma:any, project:any)
         }
     })
     const week = new Date(date[0].date);
-
-    console.log(today, newDate, week)
-
+    
+    console.log(Number(date[0].date.setDate(week.getDate() + 7)), today)
     
         if(Number(date[0].date.setDate(week.getDate() + 7)) <= today)
         {
