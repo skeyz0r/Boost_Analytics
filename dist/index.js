@@ -15,38 +15,16 @@ const newDate = new Date();
 function lead(prisma, project) {
     return __awaiter(this, void 0, void 0, function* () {
         const projectId = project;
-        const date = yield prisma.web_analytics.findMany({
-            where: { projectId: projectId },
-            select: {
-                date: true
+        yield prisma.web_analytics.update({
+            where: {
+                projectId: projectId
+            },
+            data: {
+                leads: {
+                    increment: 1,
+                },
             }
         });
-        const week = new Date(date[0].date);
-        if (Number(date[0].date.setDate(week.getDate() + 7)) <= today) {
-            yield prisma.web_analytics.update({
-                where: {
-                    projectId: projectId
-                },
-                data: {
-                    leads: 1,
-                    date: newDate,
-                    leadsAll: { increment: 1 }
-                }
-            });
-        }
-        else {
-            yield prisma.web_analytics.update({
-                where: {
-                    projectId: projectId
-                },
-                data: {
-                    leads: {
-                        increment: 1,
-                    },
-                    leadsAll: { increment: 1 }
-                }
-            });
-        }
     });
 }
 exports.lead = lead;
