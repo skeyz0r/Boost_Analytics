@@ -31,6 +31,8 @@ export async function lead(prisma:any, project:any)
     })
     const week = new Date(date[0].date);
     
+    console.log('Thesss', Number(date[0].date.setDate(week.getDate() - 1)) <= today)
+    
         if(Number(date[0].date.setDate(week.getDate() - 1)) <= today)
         {
         await prisma.web_analytics.update({
