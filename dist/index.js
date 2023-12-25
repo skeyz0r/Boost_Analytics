@@ -60,6 +60,12 @@ function population(prisma, project) {
         });
         const week = new Date(date[0].date);
         if (Number(date[0].date.setDate(week.getDate() + 7)) <= today) {
+            const newPopulation = yield prisma.web_analytics.findMany({
+                where: { projectId: projectId },
+                select: {
+                    population: true
+                }
+            });
             yield prisma.web_analytics.update({
                 where: {
                     projectId: projectId
@@ -67,6 +73,7 @@ function population(prisma, project) {
                 data: {
                     population: 1,
                     populationAll: { increment: 1 },
+                    oldPopulation: newPopulation[0].population,
                     date: newDate
                 }
             });

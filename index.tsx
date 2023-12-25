@@ -57,6 +57,14 @@ else
     
         if(Number(date[0].date.setDate(week.getDate() + 7)) <= today)
         {
+
+        const newPopulation = await prisma.web_analytics.findMany({
+            where:{projectId:projectId},
+            select:{
+                population:true
+            }
+        })
+
         await prisma.web_analytics.update({
             where:{
                 projectId:projectId
@@ -64,6 +72,7 @@ else
             data:{
                 population: 1,
                 populationAll: {increment: 1},
+                oldPopulation: newPopulation[0].population,
                 date: newDate
             }
         })
