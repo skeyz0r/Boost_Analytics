@@ -42,6 +42,7 @@ function lead(prisma, project) {
                     leads: {
                         increment: 1,
                     },
+                    leadsAll: { increment: 1 },
                 }
             });
         }
