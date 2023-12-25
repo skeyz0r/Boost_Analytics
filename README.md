@@ -2,7 +2,7 @@
 
 How to use: 
 
-Import the 'Boolytics' as a component and add it to the body element on the layout page. Provide the Prisma database and ProjectId.
+Import the '{population}' or '{leads}' as a component and add it to the body element on the layout page. Provide the Prisma database and ProjectId.
 
 
 **
